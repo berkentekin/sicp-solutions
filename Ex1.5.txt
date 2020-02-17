@@ -1,0 +1,21 @@
+(define (p) (p))
+(define (test x y)
+(if (= x 0) 0 y))
+
+(test 0 (p))
+
+If the interpreter is using applicative-order evaluation, the program will loop infinitely since it has to evaluate the value of the operands, one of which is (p), a procedure which keeps referring to itself ad infinitum, before proceeding to apply the "if" procedure:
+
+(test 0 (p)) ==> (test 0 (p)) ==> (test 0 (p)) ==> ...
+			  |                v
+			  |                definition of definition of (p), which is (p)
+			  v
+			  definition of (p), which is (p)
+
+However, in normal-order evaluation the procedures are expanded first. Our "test" procedure turns into an "if" function, which is read left to right by the interpreter:
+
+(if (= x 0) 0 y)
+--------------->
+(if (= 0 0) 0 (p))
+
+Since x is equal to 0 in our test, the program won't try to evaluate the value of y ((p) in our test) and directly print out "0".
