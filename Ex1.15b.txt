@@ -1,0 +1,17 @@
+Our procedure divides a number by three until it becomes smaller than or equal to 0.1.
+The angle whose sine we're trying to find can be written like this:
+
+s*3^y for an s not bigger than 0.1
+
+So we have to do the division y times to reach an angle not bigger than 0.1.
+
+our angle, x = s*3^y
+log(x) = log(s) + y*log(3)
+           |         |
+           |         v
+           v         multipliers are ignored
+           constant, can be ignored
+           
+that means as our angle y gets bigger, the complexity of calculating its sine grows by log(y)
+
+Hence we have O(log(x)) order of growth.
