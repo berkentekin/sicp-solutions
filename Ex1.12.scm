@@ -1,5 +1,5 @@
 #|
-Our virtual Pascal Triangle looks like this:
+Our virtual Pascal's triangle looks like this:
 
 row 1:  1
 row 2:  1 1
