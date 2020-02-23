@@ -13,6 +13,6 @@
 (define (self x) x)
 (define (inc x) (+ x 1))
 
-(define (relprimesum n)
+(define (relprimeprod n)
  (define (relprime? a) (= (gcd a n) 1))
  (filtered-accumulate * relprime? 1 self 1 inc n))
