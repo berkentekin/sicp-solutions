@@ -5,7 +5,7 @@
 
 (define (repeated-with-fast-expt f times)
   (cond ((= times 0) (lambda (x) x))
-        ((even? times) (experiment (compose f f) (/ times 2)))
-        (else (compose f (experiment f (- times 1)))))) ; Order of growth O(log(n))
+        ((even? times) (repeated-with-fast-expt (compose f f) (/ times 2)))
+        (else (compose f (repeated-with-fast-expt f (- times 1)))))) ; Order of growth O(log(n))
 
 ((repeated-with-fast-expt square 2) 5) ; 625
