@@ -10,9 +10,9 @@
 
 (define (cont-frac-iter n d k)
   (let ((kterm (/ (n k) (d k))))
-    (define (kfunc knum nextterm) (/ (n knum) (+ (d knum) nextterm)))
+    (define (kfunc knum nextterm) (/ (n (- knum 1)) (+ (d (- knum 1)) nextterm)))
     (define (conthelper x result)
-      (if (= x 1) result (conthelper (- x 1) (kfunc (- x 1) result))))
+      (if (= x 1) result (conthelper (- x 1) (kfunc x result))))
     (conthelper k kterm)))
 
 (/ 1 (cont-frac-rec (lambda (i) 1.0) (lambda (i) 1.0) 1000)) ; 1.618033988749895
