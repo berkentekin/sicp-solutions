@@ -22,9 +22,8 @@
 
 (define (shortside rect) (shorter (car rect) (cdr rect)))
 (define (longside rect) (longer (car rect) (cdr rect)))
+
 (define (perimeter rect) (* 2 (+ (length (shortside rect)) (length (longside rect)))))
 (define (area rect) (* (length (shortside rect)) (length (longside rect))))
-
-
 
 (perimeter (make-rectangle (make-segment (make-point 2 3) (make-point 4 5)) (make-segment (make-point 3 2) (make-point 2 3))))
