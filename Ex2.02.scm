@@ -19,6 +19,7 @@
         (b (end-segment segment)))
     (make-point (average (x-point a) (x-point b))
                 (average (y-point a) (y-point b))))) 
+
 ; In my original solution I hadn't made use of the "average" procedure or the "let" function,
 ; but I realized that my laziness made the code harder to read when I looked at the solutions on the internet,
 ; so I "cheated" and changed my solution.
