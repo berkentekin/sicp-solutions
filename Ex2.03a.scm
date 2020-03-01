@@ -23,6 +23,7 @@
 (define (shortside rect) (shorter (car rect) (cdr rect)))
 (define (longside rect) (longer (car rect) (cdr rect)))
 (define (perimeter rect) (* 2 (+ (length (shortside rect)) (length (longside rect)))))
+(define (area rect) (* (length (shortside rect)) (length (longside rect))))
 
 
 
