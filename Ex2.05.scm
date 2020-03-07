@@ -1,4 +1,4 @@
-; I failed to understand what the exercise tried to achieve in the beginning,
+; In the beginning I failed to understand what the exercise was trying to achieve,
 ; so I checked schemewiki to get a glance of the solutions.
 ; I was inspired by the first solution on that wiki,
 ; which means I can't confidently say this solution is entirely my own creation.
