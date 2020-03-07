@@ -1,3 +1,8 @@
+; I couldn't what the exercise tried to achieve in the beginning,
+; so I checked schemewiki to get a glance of the solutions.
+; I was inspired by the first solution on that wiki,
+; which means I can't confidently say this solution is entirely my own creation.
+
 (define (exp-iter n exp)
   (define (exhelper n exp result)
     (cond ((= exp 0) result)
