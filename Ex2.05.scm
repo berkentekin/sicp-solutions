@@ -10,10 +10,10 @@
           (else (exhelper n (- exp 1) (* n result)))))
   (exhelper n exp 1))
 
-(define (extractexp num baseofexp otherexp)
+(define (extractexp num baseofexp otherbase)
   (define (expfinder x base result)
     (if (= x 1) result (expfinder (/ x base) base (+ result 1))))
-  (if (= (remainder num otherexp) 0) (extractexp (/ num otherexp) baseofexp otherexp) (expfinder num baseofexp 0)))
+  (if (= (remainder num otherbase) 0) (extractexp (/ num otherbase) baseofexp otherbase) (expfinder num baseofexp 0)))
 
 (define (my-cons a b) (* (exp-iter 2 a) (exp-iter 3 b)))
 (define (my-car z) (extractexp z 2 3))
