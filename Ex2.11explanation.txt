@@ -33,4 +33,4 @@ negneg negneg
 [-3,-1] [-6,-2] ==> mi ux*uy lx*ly
 
 
-All seven cases of "posneg" are omitted since the procedures lower-bound and upper-bound select the smallest and biggest value in our intervals and don't take the positions of them into account. That leaves us with these nine cases.
+All seven cases of "posneg" are omitted since the procedures lower-bound and upper-bound select the smallest and biggest value in our intervals and don't take the positions of them into account. That leaves us with these nine cases, one of which requires eight multiplications to be solved as stated in the book.
