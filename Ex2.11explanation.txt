@@ -1,0 +1,36 @@
+  x      y
+
+pospos pospos
+[1,3] [2,5] ==> mi lx*ly ux*uy 
+
+pospos negpos
+[1,3] [-2,5] ==> mi ux*ly ux*uy
+
+pospos negneg
+[1,3] [-5,-2] ==> mi ux*ly lx*uy
+
+negpos pospos
+[-1,3] [2,4] ==> mi lx*uy ux*uy
+
+negpos negpos
+[-1,1] [-2,3] ==> mi lx*uy ux*uy
+[-2,1] [-4,5] ==> mi lx*uy lx*ly
+[-1,2] [-3,2] ==> mi ux*ly ux*uy
+[-1,1] [-3,2] ==> mi ux*ly lx*ly
+
+General rule: [mi (min lx*uy ux*ly) (max ux*uy lx*ly)] 
+
+negpos negneg
+[-1,1] [-5,-2] ==> mi ux*ly lx*ly
+
+negneg pospos
+[-5,-2] [1,3] ==> mi lx*uy ux*ly
+
+negneg negpos
+[-5,-2] [-1,1] ==> mi lx*uy lx*ly
+
+negneg negneg
+[-3,-1] [-6,-2] ==> mi ux*uy lx*ly
+
+
+All seven cases of "posneg" are omitted since the procedures lower-bound and upper-bound select the smallest and biggest value in our intervals and don't take the positions of them into account. That leaves us with these nine cases.
