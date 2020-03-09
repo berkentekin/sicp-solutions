@@ -18,7 +18,7 @@ negpos negpos
 [-1,2] [-3,2] ==> mi ux*ly ux*uy
 [-1,1] [-3,2] ==> mi ux*ly lx*ly
 
-General rule: [mi (min lx*uy ux*ly) (max ux*uy lx*ly)] 
+General rule: mi (min lx*uy ux*ly) (max ux*uy lx*ly)
 
 negpos negneg
 [-1,1] [-5,-2] ==> mi ux*ly lx*ly
