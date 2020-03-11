@@ -1,5 +1,3 @@
-(define nil '())
-
 (define (reverse ls)
   (if (null? (cdr ls))
       ls
