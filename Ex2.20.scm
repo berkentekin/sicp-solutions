@@ -7,7 +7,7 @@
     (define (g . ls)
      (if (null? ls)
      '()
-     (cons (+ 1 (car ls)) (g . ??????))))
+     (cons (+ 1 (car ls)) (g ??????)))) ; both (g (cdr ls)) and (g . (cdr ls)) return errors.
 |#
 
 ; Turns out using a helper function was all I had to do 
