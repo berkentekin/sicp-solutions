@@ -1,0 +1,11 @@
+(define (same-parity first . restofls)
+  (define yes? (if (odd? first) odd? even?))
+  (define (g helperls)
+    (cond
+     ((null? helperls) '())
+     ((yes? (car helperls)) (cons (car helperls) (g (cdr helperls))))
+     (else (g (cdr helperls)))))
+  (cons first (g restofls)))
+
+(same-parity 1 2 3 4 5 6) ; (1 3 5)
+(same-parity 2 3 4 5 6) ; (2 4 6)
