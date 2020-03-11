@@ -1,5 +1,3 @@
-(define nil '())
-
 (define (last-pair ls)
   (cond ((null? (car ls)) (error "List is empty"))
         ((null? (cdr ls)) (car ls))
