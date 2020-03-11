@@ -1,5 +1,6 @@
 (define us-coins (list 50 25 10 5 1))
 (define uk-coins (list 100 50 20 10 5 2 1 0.5))
+(define tr-coins (list 100 50 25 10 5 1))
 
 (define (cc amount coin-values)
   (define (first-denomination ls) (car ls))
@@ -15,3 +16,4 @@
 
 (cc 100 us-coins) ;292
 (cc 100 uk-coins) ;104561 (this is really intriguing)
+(cc 100 tr-coins) ;293 (this isn't)
