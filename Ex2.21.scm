@@ -3,4 +3,12 @@
       '()
       (cons (proc (car ls)) (map proc (cdr ls)))))
 
-(map (lambda (x) (* x x)) (list 1 2 3 4))
+(define (square-list items)
+  (if (null? items)
+      '()
+      (cons
+       ((lambda (x) (* x x)) (car items)) (square-list (cdr items)))))
+
+(define (square-map-list items)
+  (map
+   (lambda (x) (* x x)) items))
