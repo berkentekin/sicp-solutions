@@ -6,10 +6,9 @@
 (define (deep-reverse ls)
   (define (deephelper x)
     (cond ((null? x) '())
-          ((pair? (car x)) (cons (reverse (car x)) (deephelper (cdr x))))
+          ((pair? (car x)) (cons (reverse (deephelper (car x))) (deephelper (cdr x))))
           (else (cons (car x) (deephelper (cdr x))))))
   (reverse (deephelper ls)))
 
-(deep-reverse (list 1 (list 2 3) 4 5 (list 6 7 8))) ; ((8 7 6) 5 4 (3 2) 1)
+(deep-reverse (list 1 (list 2 3) 4 5 (list 6 7 8 (list 9 10 11)))) ; (((11 10 9) 8 7 6) 5 4 (3 2) 1)
 (deep-reverse (list (list 1 2) (list 3 4))) ; ((4 3) (2 1))
-
