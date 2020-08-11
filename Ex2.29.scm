@@ -1,0 +1,21 @@
+(define (make-mobile left right) (list left right))
+(define (make-branch length structure) (list length structure))
+(define (left-branch mobile) (car mobile))
+(define (right-branch mobile) (cadr mobile))
+(define (branch-length branch) (car branch))
+(define (branch-structure branch) (cadr branch))
+
+(define (total-weight mobile)
+  (define (branch-weight branch)
+    (let ((bs (branch-structure branch)))
+    (cond ((not (list? bs)) bs)
+	  (else (branch-weight bs)))))
+  (+ (branch-weight (left-branch mobile)) (branch-weight (right-branch mobile))))
+
+(define (balanced? mobile)
+  (define (torque currlen branch)
+    (if (list? (branch-structure branch))
+	(torque (+ currlen (branch-length (branch-structure branch))) (branch-structure branch))
+	(* (branch-structure branch) currlen)))
+
+  (= (torque (branch-length (left-branch mobile)) (left-branch mobile)) (torque (branch-length (right-branch mobile)) (right-branch mobile))))
