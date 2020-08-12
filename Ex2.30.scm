@@ -1,6 +1,6 @@
 (define (square x) (* x x))
 
-(define (square-tree ls)
-  (cond ((null? ls) '())
-	((not (pair? ls)) (square ls))
-	(else (cons (square-tree (car ls)) (square-tree (cdr ls))))))
+(define (square-tree tr)
+  (cond ((null? tr) '())
+	((not (pair? tr)) (square tr))
+	(else (cons (square-tree (car tr)) (square-tree (cdr tr))))))
