@@ -1,0 +1,8 @@
+(define (unique-pair-sum n s)
+  (define (unique-triplet a) (flatmap (lambda (i)
+					(flatmap (lambda (j)
+					       (map (lambda (k) (list i j k))
+						    (enumerate-interval 1 (- j 1))))
+					     (enumerate-interval 1 (- i 1))))
+				      (enumerate-interval 1 a)))
+  (filter (lambda (x) (= (+ (car x) (cadr x) (caddr x)) s)) (unique-triplet n)))
