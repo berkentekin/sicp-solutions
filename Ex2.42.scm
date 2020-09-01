@@ -27,16 +27,16 @@
 (define (adjoin-position k new-row rest-of-queens)
   (cons (queen k new-row) rest-of-queens))
 
-(define (safe? k positions)
-  (let ((newqueen (car positions))
-        (others (cdr positions)))
-    (cond
-     ((and
-       (not (contains (row newqueen) (map row others)))
-       (not (contains (- (col newqueen) (row newqueen)) (map (lambda (x) (- (col x) (row x))) others)))
-       (not (contains (+ (col newqueen) (row newqueen)) (map (lambda (x) (+ (col x) (row x))) others))))
-      #t)
-     (else #f))))
+(define (safe? k positions) 
+  (let ((newqueen (car positions)) 
+        (others (cdr positions))) 
+    (cond 
+      ((or 
+        (contains (row newqueen) (map row others)) 
+        (contains (- (col newqueen) (row newqueen)) (map (lambda (x) (- (col x) (row x))) others)) 
+        (contains (+ (col newqueen) (row newqueen)) (map (lambda (x) (+ (col x) (row x))) others))) 
+       #f) 
+      (else #t)))) 
 
 (define (queens board-size)
   (define (queen-cols k)
