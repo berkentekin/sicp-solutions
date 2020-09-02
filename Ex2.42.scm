@@ -18,8 +18,6 @@
 
 (define (enumerate-interval beg end) (if (> beg end) nil (cons beg (enumerate-interval (+ beg 1) end))))
 
-(enumerate-interval 1 6)
-
 (define (flatmap proc seq) (accumulate append nil (map proc seq)))
 
 (define empty-board nil)
