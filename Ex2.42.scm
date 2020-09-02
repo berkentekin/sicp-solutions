@@ -1,7 +1,7 @@
 ;This exercise was a nightmare, everything went wrong while I was trying to solve it. Even the damn enumerate procedure worked wrongly before I managed to debug it.
-;However, solving this was an amazing experience.
+;Nevertheless, deducing the aim of the authors' code and completing it was an amazing experience and totally worth it.
 
-;Unlike the template, queens are defined as their row and column numbers, respectively, which is the standard in chess. 
+;Unlike the template, queens are defined as their column and row numbers, respectively, which is the standard in chess. 
 ;The reverse procedure used at the end is purely for aesthetic reasons.
 
 (define nil '())
