@@ -2,7 +2,7 @@
 ;Nevertheless, deducing the aim of the authors' code and completing it was an amazing experience and totally worth it.
 
 ;Unlike the template, queens are defined as their column and row numbers, respectively, which is the standard in chess. 
-;The reverse procedure used at the end is purely for aesthetic reasons.
+;The reverse procedure at the end is used purely for aesthetic reasons.
 
 (define nil '())
 (define (queen col row) (list col row))
