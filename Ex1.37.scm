@@ -1,4 +1,4 @@
-;I'll admit this is not the prettiest code, besides the recursive procedure goes from top to bottom
+;I'll admit this is not the prettiest, most consistent code; the recursive procedure goes from top to bottom
 ;while the iterative procedure goes from bottom to top.
 
 (define (cont-frac-rec n d k)
